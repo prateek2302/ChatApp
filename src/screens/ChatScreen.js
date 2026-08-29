@@ -33,7 +33,7 @@ export default function ChatScreen({route, navigation}) {
   }, [userId, name, avatar]);
 
   const onSend = useCallback((newMsgs = []) => {
-    setMessages(prev => GiftedChat.append(prev, newMsgs));
+    setMessages(prev => [...prev, ...newMsgs]);
     // Mock auto-reply after 1s
     setTimeout(() => {
       const replies = [
@@ -50,7 +50,7 @@ export default function ChatScreen({route, navigation}) {
         createdAt: new Date(),
         user: {_id: 2, name, avatar},
       };
-      setMessages(prev => GiftedChat.append(prev, [reply]));
+      setMessages(prev => [...prev, reply]);
     }, 1000);
   }, [name, avatar]);
 
