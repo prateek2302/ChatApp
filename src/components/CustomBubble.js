@@ -1,5 +1,5 @@
 import React from 'react';
-import {Bubble} from 'react-native-gifted-chat';
+import {Bubble} from 'react-native-gifted-chat/lib/Bubble/index.js';
 import {useColorScheme} from 'react-native';
 import {Colors} from '../theme/colors';
 

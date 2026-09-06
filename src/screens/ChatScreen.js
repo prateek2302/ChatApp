@@ -1,6 +1,9 @@
 import React, {useState, useCallback, useEffect, useLayoutEffect} from 'react';
-import {View, Text, TouchableOpacity, useColorScheme, StyleSheet} from 'react-native';
-import {GiftedChat, InputToolbar, Send} from 'react-native-gifted-chat';
+import {View, Text, TouchableOpacity, useColorScheme, StyleSheet, Platform} from 'react-native';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
+import {GiftedChat} from 'react-native-gifted-chat/lib/GiftedChat/index.js';
+import {InputToolbar} from 'react-native-gifted-chat/lib/InputToolbar.js';
+import {Send} from 'react-native-gifted-chat/lib/Send.js';
 import CustomBubble from '../components/CustomBubble';
 import {INITIAL_MESSAGES, USERS} from '../data/mockChats';
 import {Colors} from '../theme/colors';
@@ -8,6 +11,7 @@ import {Colors} from '../theme/colors';
 export default function ChatScreen({route, navigation}) {
   const {userId, name, avatar} = route.params;
   const isDark = useColorScheme() === 'dark';
+  const insets = useSafeAreaInsets();
   const [messages, setMessages] = useState([]);
 
   useLayoutEffect(() => {
@@ -79,6 +83,7 @@ export default function ChatScreen({route, navigation}) {
           </Send>
         )}
         placeholder="Type a message"
+        bottomOffset={Platform.OS === 'ios' ? insets.bottom : 0}
         alwaysShowSend
         showAvatarForEveryMessage={false}
         isTyping={false}
