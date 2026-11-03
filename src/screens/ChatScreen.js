@@ -5,7 +5,7 @@ import {GiftedChat} from 'react-native-gifted-chat/lib/GiftedChat/index.js';
 import {InputToolbar} from 'react-native-gifted-chat/lib/InputToolbar.js';
 import {Send} from 'react-native-gifted-chat/lib/Send.js';
 import CustomBubble from '../components/CustomBubble';
-import {INITIAL_MESSAGES, USERS} from '../data/mockChats';
+import {INITIAL_MESSAGES} from '../data/mockChats';
 import {Colors} from '../theme/colors';
 
 export default function ChatScreen({route, navigation}) {
@@ -69,16 +69,19 @@ export default function ChatScreen({route, navigation}) {
           <InputToolbar
             {...props}
             containerStyle={{
-              backgroundColor: isDark ? '#202C33' : '#F0F2F5',
+            backgroundColor: isDark ? Colors.surfaceDark : '#fff',
               borderTopWidth: 0,
-              padding: 6,
-            }}
+            padding: 7,
+            marginHorizontal: 10,
+            marginBottom: 4,
+            borderRadius: 18,
+          }}
           />
         )}
         renderSend={props => (
           <Send {...props} containerStyle={{justifyContent: 'center', alignItems: 'center', marginHorizontal: 8}}>
             <View style={styles.sendBtn}>
-              <Text style={{color: '#fff', fontSize: 18}}>➤</Text>
+              <Text style={{color: '#fff', fontSize: 18}}>↑</Text>
             </View>
           </Send>
         )}

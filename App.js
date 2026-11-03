@@ -20,9 +20,10 @@ export default function App() {
         <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'} />
         <Stack.Navigator
           screenOptions={{
-            headerStyle: {backgroundColor: isDark ? '#111' : '#075E54'},
+            headerStyle: {backgroundColor: isDark ? '#0B1020' : '#635BFF'},
             headerTintColor: '#fff',
-            headerTitleStyle: {fontWeight: '700'},
+            headerTitleStyle: {fontWeight: '800', fontSize: 20},
+            headerShadowVisible: false,
             animation: 'slide_from_right',
           }}>
           <Stack.Screen

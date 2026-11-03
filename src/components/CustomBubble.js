@@ -11,12 +11,12 @@ export default function CustomBubble(props) {
       wrapperStyle={{
         right: {
           backgroundColor: isDark ? Colors.bubbleMeDark : Colors.bubbleMe,
-          borderRadius: 16,
+          borderRadius: 18,
           padding: 4,
         },
         left: {
           backgroundColor: isDark ? Colors.bubbleOtherDark : Colors.bubbleOther,
-          borderRadius: 16,
+          borderRadius: 18,
           padding: 4,
         },
       }}
